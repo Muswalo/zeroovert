@@ -1,0 +1,292 @@
+nav {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../images/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.navTopCont{
+    height: 11em;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.logoCont {
+    height: 100%;
+}
+
+#logo{
+    height: 100%;
+}
+
+.listCont {
+    color: white;
+    display: flex;
+}
+
+
+
+.bars {
+    display: none;
+}
+
+.listCont li {
+    list-style-type: none;
+    font-size: 1.1em;
+    margin-right:  50px;
+    padding: 10px;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-bottom: 12px;
+    --x: 50%;
+    --y: 50%;
+    background: radial-gradient(circle at var(--x) var(--y), rgba(78, 78, 78, 0.778), rgba(0, 0, 0, 0.786));    
+    border-radius: 30px;
+    backdrop-filter: blur(30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.listCont li:hover {
+    background: radial-gradient(circle at var(--x) var(--y), red, rgba(78, 78, 78, 0.778));
+}
+.chevRonDown {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    padding-right: 5px;
+}
+
+.extras {
+    font-size: 40px;
+    margin-left: 90px;
+    color: rgb(255, 255, 255);
+}
+
+.iconCont {
+    margin-left: 40px;
+}
+
+.iconCont :hover {
+    transform: scale(1.02);
+    color: rgb(163, 163, 163);
+}
+
+.intro {
+    position: relative;
+    margin-left: 100px;
+}
+
+#intoText {
+    font-size: 50px;
+    color: white;
+}
+
+#text {
+    font-size: 30px;
+    width: 400px;
+    color: white;
+}
+
+.getStarted {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#startBtn {
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(to right, rgba(78, 78, 78, 0.778),rgba(0, 0, 0, 0.786));
+    padding: 18px;
+    padding-right: 22px;
+    padding-left: 22px;   
+    border-radius: 35px;
+    position: relative;
+    top: 5px;
+    backdrop-filter: blur(30px);
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+#startBtn:hover {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.786),rgba(78, 78, 78, 0.778));
+
+}
+
+#learn {
+    font-size: 20px;
+    color: white;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#arrowIcon {
+    position: relative;
+    top: 6px;
+    left: 4px;
+    background-color: white;
+    padding: 4px 6px 1px 8px;
+    color: red;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#t {
+    position: relative;
+    top: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+#line {
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease-in-out;
+    margin-top: 4px;
+}
+
+#learn:hover #line {
+    width: 100%;
+}
+
+#learn:hover #arrowIcon{
+    color: rgb(255, 125, 125);  
+}
+
+@media screen and (max-width: 768px) {
+
+    nav {
+        width: 100vw;
+        height: 100vw;
+    }
+
+    #intoText {
+        font-size: 35px;
+        color: white;
+    }
+
+    #text {
+        font-size: 24px;
+        width: 250px;
+        color: white;
+    }
+
+    .listCont {
+        z-index: 1;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.175);
+        backdrop-filter: blur(7px);
+        position: fixed;
+        top: -14px;
+        height: 100vh;
+        width: 60vw;
+        margin-left: -78vw;
+        padding: 20px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .listCont.open {
+        margin-left: 0;
+    }
+
+    .listCont li {
+        margin-bottom: 40px;
+        cursor: text;
+    }
+
+    .listCont.open {
+        display: flex;
+    }
+
+    .intro {
+        position: relative;
+        margin-left: 20px;
+    }
+
+    .navTopCont{
+        height: 7em;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .listCont li {
+        margin-right: 0;
+    }
+
+    .background {
+        background-size: fill;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .background::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+    
+    .extras {
+        font-size: 40px;
+        color: rgb(214, 213, 213);
+        position: relative;
+        right: 10px;
+    }
+
+    .iconCont {
+        margin-left: 10px;
+    }
+
+    .bars {
+        display: inline-block;
+    }
+
+
+}
