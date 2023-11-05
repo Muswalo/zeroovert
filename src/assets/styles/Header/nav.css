@@ -36,13 +36,18 @@ nav::before {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
-
 .navTopCont{
     height: 11em;
     display: flex;
     align-items: center;
     position: relative;
 }
+
+.navTopCont.scrolled {
+    background-color: rgba(13, 13, 13, 0.346);
+    backdrop-filter: blur(7px);
+} 
+
 .logoCont {
     height: 100%;
 }
@@ -139,7 +144,6 @@ nav::before {
     position: relative;
     top: 5px;
     backdrop-filter: blur(30px);
-    cursor: pointer;
     transition: all 0.8s;
 }
 
@@ -204,6 +208,7 @@ nav::before {
     #intoText {
         font-size: 35px;
         color: white;
+        width: 280px;
     }
 
     #text {
@@ -223,7 +228,7 @@ nav::before {
         width: 60vw;
         margin-left: -78vw;
         padding: 20px;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.35s ease-in-out;
     }
 
     .listCont.open {
@@ -240,16 +245,23 @@ nav::before {
     }
 
     .intro {
-        position: relative;
+        position: absolute;
+        top: 8em;
         margin-left: 20px;
+        z-index: 1;
     }
 
     .navTopCont{
         height: 7em;
+        width: 100vw;
         display: flex;
         align-items: center;
         position: relative;
         justify-content: space-between;
+        transition: all ease-in-out 0.35s;
+        position: fixed;
+        top: 0;
+        z-index: 4;
     }
 
     .listCont li {
@@ -259,6 +271,9 @@ nav::before {
     .background {
         background-size: fill;
         background-position: center;
+        position: relative;
+        top: 0;
+        z-index: 0;
         width: 100vw;
         height: 100vh;
     }
@@ -277,7 +292,7 @@ nav::before {
         font-size: 40px;
         color: rgb(214, 213, 213);
         position: relative;
-        right: 10px;
+        right: 25px;
     }
 
     .iconCont {

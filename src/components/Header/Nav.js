@@ -8,7 +8,7 @@ import { FaSearch,FaBars } from "react-icons/fa";
 const Nav = () =>{
 
     const [sideBarOpen, setSideBarOpen] = useState(false);
-
+    const [isScrolled, setIsScrolled] = useState(false)
     const listRef = useRef (null);
 
     useEffect(() => {
@@ -26,19 +26,36 @@ const Nav = () =>{
 
     }, []);
 
+    useEffect (()=>{
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll',handleScroll);
+        };
+
+    }, []);
+
 
     const ToggleSideBarBtn = () => {
         setSideBarOpen((prevState) => !prevState);
     }
 
+    const handleScroll = () => {
+        const scroll = window.scrollY || document.documentElement.scrollTop;
 
+        if (scroll > 1) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
+    };
 
     return (
         <nav>
 
             <div className="background"></div>
 
-            <div className="navTopCont">
+            <div className= {`navTopCont ${isScrolled ? 'scrolled' : ''}`}>
 
                 <div className="logoCont">
                     <img src={logo} id="logo"/>

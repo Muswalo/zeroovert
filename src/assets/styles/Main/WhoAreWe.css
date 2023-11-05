@@ -1,0 +1,71 @@
+.WhoAreWeCont {
+    position: relative;
+    width: 100vw;
+    height: max-content;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+}
+
+.IntroTextCont {
+    flex: 1;
+    padding-left: 200px;
+    padding-top: 50px;
+}
+
+.WhoWeAreImage {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+#IntroHeading {
+    color: white;
+    width: 300px;
+}
+
+#introTextParagraph {
+    color: white;
+    width: 300px;
+    font-size: 19px;
+}
+
+#logoTransparent {
+    height: 80%;
+    width: 80%;
+}
+
+@media screen and (max-width: 768px) {   
+    .WhoAreWeCont { 
+        flex-direction: column-reverse;
+    }
+
+    .IntroTextCont {
+        flex: 1;
+        padding-left: 20px;
+        padding-top: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .WhoWeAreImage {
+        flex: 1;
+    }
+
+    #logoTransparent {
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #introTextParagraph {
+        width: 350px;
+        font-size: 24px;
+    }
+
+    #IntroHeading {
+        width: 350px;
+    }
+    
+}
